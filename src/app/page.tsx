@@ -1,17 +1,23 @@
 "use client";
 
-import { Three } from "@/app/helpers/Three";
-import * as THREE from "three";
-import View1 from "./components/View1";
+import { R3fBox } from "./components/R3fBox";
+import { Canvas } from "@react-three/fiber";
 
 export default function Home() {
-  console.log("THREE", THREE);
   return (
     <>
-      <div>Hellossss</div>
-      <Three>
-        <View1 />
-      </Three>
+      <div>Hello</div>
+      <Canvas>
+        <spotLight
+          position={[10, 10, 10]}
+          angle={0.15}
+          penumbra={1}
+          decay={0}
+          intensity={Math.PI}
+        />
+
+        <R3fBox position={[-1.2, 0, 0]} />
+      </Canvas>
     </>
   );
 }
